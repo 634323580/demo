@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #tutorial{
+    border: 1px solid #000;
+  }
+</style>
+<body>
+  <h1><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes">绘制形状</a></h1>
+  <canvas id="tutorial" width="150" height="150"></canvas>
+</body>
+<script>
+  /** @type {HTMLCanvasElement} */
+  let canvas = document.getElementById('tutorial')
+  let ctx = canvas.getContext('2d')
+  // ctx.fillRect(25, 25, 100, 100)
+  // ctx.clearRect(45, 45, 60, 60)
+  // ctx.strokeRect(50, 50, 50, 50)
+
+
+  // 绘制三角形
+  // ctx.beginPath()
+  // ctx.moveTo(25, 25)
+  // ctx.lineTo(105, 25)
+  // ctx.lineTo(25, 105)
+  // ctx.fill()
+
+  // ctx.beginPath()
+  // ctx.moveTo(125, 125)
+  // ctx.lineTo(125, 45)
+  // ctx.lineTo(45, 125)
+  // ctx.lineTo(125, 125)
+  // ctx.strokeStyle = "red"
+  // ctx.closePath()
+  // ctx.stroke()
+
+  const rectSize = [100, 100]
+  ctx.fillStyle = "red"
+  ctx.save()
+  ctx.beginPath()
+  ctx.translate(-0.5 * rectSize[0], -0.5 * rectSize[1])
+  ctx.rect(0.5 * canvas.width, 0.5 * canvas.height, ...rectSize)
+  ctx.fill()
+  ctx.restore()
+  ctx.clearRect(0.5 * canvas.width, (canvas.height - rectSize[1]) / 2, 0.5 * rectSize[0], 0.5 * rectSize[1])
+
+
+  ctx.beginPath()
+  ctx.fillStyle = "#333"
+  ctx.rect(0.5 * canvas.width, 0.5 * canvas.height, 0.5 * rectSize[0], 0.5 * rectSize[1])
+  ctx.fill()
+
+
+
+  ctx.strokeStyle = '#333'
+  ctx.beginPath()
+  ctx.arc(0.5 * canvas.width, 0.5 * canvas.height, 50, 0, 2 * Math.PI);
+  ctx.stroke()
+
+
+</script>
+</html>

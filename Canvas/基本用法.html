@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #tutorial{
+    border: 1px solid #000;
+  }
+</style>
+<body>
+  <h1><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Basic_usage">基本用法</a></h1>
+  <canvas id="tutorial" width="150" height="150"></canvas>
+</body>
+<script>
+  let canvas = document.getElementById('tutorial')
+  let ctx = canvas.getContext('2d')
+  ctx.fillStyle = "rgb(200,0,0)"
+  ctx.fillRect(10, 10, 55, 55)
+
+  ctx.fillStyle = "rgba(0, 0, 200, 0.5)"
+  ctx.fillRect(30, 30, 55, 55)
+</script>
+</html>

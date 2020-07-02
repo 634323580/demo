@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    #canvas{
+      border: 1px solid #333;
+    }
+  </style>
+  <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script>
+  /** @type {HTMLCanvasElement} */
+  let canvas = document.getElementById('canvas')
+  let context = canvas.getContext('2d')
+  context.save()
+  context.translate(-100 / 2, -100 / 2)
+  context.beginPath()
+  context.fillStyle = 'red'
+  context.rect(0.5 * canvas.width, 0.5 * canvas.height, 100, 100)
+  context.fill()
+  context.restore()
+  context.beginPath()
+  context.strokeStyle = '#333'
+  context.moveTo(0, 0.5 * canvas.height)
+  context.lineTo(canvas.width, 0.5 * canvas.height)
+  context.stroke()
+  context.beginPath()
+  context.moveTo(0.5 * canvas.width, 0)
+  context.strokeStyle = '#333'
+  context.lineTo(canvas.width * 0.5, canvas.height)
+  context.stroke()
+  context.beginPath()
+  context.strokeStyle = '#333'
+  context.moveTo(canvas.width, 0)
+  context.lineTo(0, canvas.height)
+  context.stroke()
+  context.beginPath()
+  context.strokeStyle = '#333'
+  context.moveTo(0, 0)
+  context.lineTo(canvas.width, canvas.height)
+  context.stroke()
+  context.save()
+  context.beginPath()
+  context.translate(-100 / 2, -100 / 2)
+  context.fillStyle = '#333'
+  context.moveTo(0.5 * canvas.width, 0.5 * canvas.height,)
+  context.lineTo(0.5 * canvas.width + 100, canvas.height * 0.5)
+  context.lineTo(0.5 * canvas.width + 50, canvas.height * 0.5 + 50)
+  context.fill()
+  context.restore()
+</script>
+</html>
