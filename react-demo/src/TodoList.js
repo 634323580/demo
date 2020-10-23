@@ -6,7 +6,7 @@ class TodoList extends Component {
     super(props)
     this.state = {
       inputValue: '',
-      list: [1,2,3,4]
+      list: [1]
     }
     this.handlerInputChange = this.handlerInputChange.bind(this)
     this.handlerInputClick = this.handlerInputClick.bind(this)
