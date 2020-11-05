@@ -9,10 +9,12 @@ class TodoList extends Component {
 
   constructor(props) {
     super(props)
+    // 获取storeState
     this.state = store.getState()
     this.handlerInputChange = this.handlerInputChange.bind(this)
     this.handlerStoreChange = this.handlerStoreChange.bind(this)
     this.handlerBtnClick = this.handlerBtnClick.bind(this)
+    // 监听store改变
     store.subscribe(this.handlerStoreChange)
   }
 
@@ -42,18 +44,22 @@ class TodoList extends Component {
       </div>
     )
   }
+  // 输入框改变
   handlerInputChange(e) {
     const action = getInputChangeAction(e.target.value)
     store.dispatch(action)
   }
+  // 点击按钮
   handlerBtnClick() {
     const action = getBtnClickAction()
     store.dispatch(action)
   }
+  // 删除
   handlerItemDelete(index) {
     const action = getItemDeleteAction(index)
     store.dispatch(action)
   }
+  // store改变处理函数
   handlerStoreChange() {
     this.setState(store.getState())
   }
