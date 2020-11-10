@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import store from './store/index'
-import { getInputChangeAction, getBtnClickAction, getItemDeleteAction, getTodoList } from './store/actionCreators'
+import { getInputChangeAction, getBtnClickAction, getItemDeleteAction, getInitList } from './store/actionCreators'
 import TodoListUI from './TodoListUI'
 
 
@@ -31,7 +31,7 @@ class TodoList extends Component {
     )
   }
   componentDidMount() {
-    const action = getTodoList()
+    const action = getInitList()
     store.dispatch(action)
   }
   // 输入框改变
